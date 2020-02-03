@@ -8,11 +8,11 @@ verify_ssl = true
 [packages]
 pyklip = {git = "https://bitbucket.org/pyKLIP/pyklip.git"}
 matplotlib = "*"
-jupyter = "*"
 seaborn = "*"
 numpy = "*"
 scipy = "*"
 astropy = "*"
+notebook = "*"
 
 [requires]
 python_version = "3.7"
