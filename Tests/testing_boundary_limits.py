@@ -9,17 +9,21 @@ import pyklip.klip
 import pyklip.instruments.Instrument as Instrument
 import pyklip.parallelized as parallelized
 import pyklip.rdi as rdi
+import pyklip.fakes as fakes
 from astropy.nddata.utils import Cutout2D
 
 #Import the dataset to be used
 filtername = "f300m"
 
+parent_directory = os.path.dirname(__file__)
+
+
 # read in roll 1
-with fits.open("old_simulated_data/NIRCam_target_Roll1_{0}.fits".format(filtername)) as hdulist:
+with fits.open(parent_directory + "/old_simulated_data/NIRCam_target_Roll1_{0}.fits".format(filtername)) as hdulist:
     roll1_cube = hdulist[0].data
 
 # read in roll 2
-with fits.open("old_simulated_data/NIRCam_target_Roll2_{0}.fits".format(filtername)) as hdulist:
+with fits.open(parent_directory + "/old_simulated_data/NIRCam_target_Roll2_{0}.fits".format(filtername)) as hdulist:
     roll2_cube = hdulist[0].data  
 
 # combine the two rows
@@ -41,7 +45,7 @@ dataset.flipx = False
 
 
 # read in unocculted PSF
-with fits.open("old_simulated_data/NIRCam_unocculted_{0}.fits".format(filtername)) as hdulist:
+with fits.open(parent_directory + "/old_simulated_data/NIRCam_unocculted_{0}.fits".format(filtername)) as hdulist:
     psf_cube = hdulist[0].data 
     psf_head = hdulist[0].header
     
@@ -64,7 +68,7 @@ psf_stamp = scipy.ndimage.map_coordinates(psf_frame, [y,x])
 #Let's choose our contrasts so that the planets get fainter as we go further from the star
 psf_stamp_input = np.array([psf_stamp for j in range(12)])
 input_contrasts = [1e-3, 7e-4, 3e-4]
-planet_seps = [15, 25, 35]
+planet_seps = [15, 25, 47]
 pas = [0, 90, 180, 270]
 
 #Now injecting the fake planets in a spiral:
@@ -80,3 +84,44 @@ for input_contrast, planet_sep in zip(input_contrasts, planet_seps):
                             pa = pa)
 
 plt.imshow(dataset.input[0], interpolation="nearest", cmap="inferno")
+
+ #Set output directory
+outputdir = parent_directory + '/contrastcurves'
+fileprefix = 'FAKE_KLIP_ADI_A9K5S1M1'
+numbasis = [1,5,10,20,50]
+
+
+#Run KLIP on dataset with injected fakes
+parallelized.klip_dataset(dataset, 
+                          outputdir=outputdir, 
+                          fileprefix=fileprefix, 
+                          algo = 'klip', 
+                          annuli=1, 
+                          subsections=1, 
+                          movement=1, 
+                          numbasis=numbasis, 
+                          mode="ADI")
+
+#Obtain the centers of the output KLIP fits file
+with fits.open(parent_directory + "/contrastcurves/FAKE_KLIP_ADI_A9K5S1M1-KLmodes-all.fits") as hdulist:
+    cube = hdulist[0].data
+    cube_centers = [hdulist[0].header['PSFCENTX'], hdulist[0].header['PSFCENTY']]
+
+#Create and empty list to store retrieved flux values
+retrieved_fluxes = []
+
+#Retrieve planet fluxes
+for input_contrast, planet_sep in zip(input_contrasts, planet_seps):
+    
+    fake_planet_fluxes = []
+                                      
+    for pa in pas:
+        fake_flux = fakes.retrieve_planet_flux(frames = cube[2], 
+                                            centers = cube_centers,
+                                            astr_hdrs = dataset.wcs[0], 
+                                            sep = planet_sep,
+                                            pa = pa)
+        fake_planet_fluxes.append(fake_flux)
+
+    retrieved_fluxes.append(fake_flux)
+    
