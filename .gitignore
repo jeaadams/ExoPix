@@ -1,6 +1,8 @@
 *.fits
 *.csv
 notebooks/old_simulated_data
+notebooks/contrastcurves
+
 
 # Generic python gitignore template
 
