@@ -3,6 +3,7 @@
 notebooks/old_simulated_data
 notebooks/contrastcurves
 .DS_Store
+data
 
 # Generic python gitignore template
 
