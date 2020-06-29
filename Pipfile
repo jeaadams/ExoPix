@@ -7,12 +7,12 @@ verify_ssl = true
 
 [packages]
 pyklip = {git = "https://bitbucket.org/pyKLIP/pyklip.git"}
-matplotlib = "*"
-seaborn = "*"
-numpy = "*"
-scipy = "*"
-astropy = "*"
+pandas = "==1.0.5"
+matplotlib = "==3.2.2"
+scipy = "==1.4.1"
+astropy = "==4.0.1.post1"
 notebook = "*"
+tqdm = "*"
 
 [requires]
 python_version = "3.7"
