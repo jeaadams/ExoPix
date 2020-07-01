@@ -9,6 +9,8 @@ Tutorials to aid in understanding simulated data from the James Webb Space Teles
 
 ## Installation
 
+ Please note that the functions utilized in this notebook require Python version 3.8.5 or above.
+
 To use these notebooks in your global environment, you'll need to install the packages in our requirements.txt. You can do this by running the following:
 
 ```bash
