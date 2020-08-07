@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath('..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'JWST ERS Pipeline'
+project = 'ExoPlans'
 copyright = '2020, Jea Adams'
 author = 'Jea Adams, Jason Wang'
 
