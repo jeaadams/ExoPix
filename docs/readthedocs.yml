@@ -1,11 +1,4 @@
-channels:
-  - conda-forge
-dependencies:
-  - python==3.8
-  - sphinx>=1.4
-  - numpy
-  - nbconvert
-  - ipykernel
-  - pip:
-    - nbsphinx
-    - prompt-toolkit==2.0.1
+python:
+  version: 3.8
+  install:
+    - requirements: requirements.txt
