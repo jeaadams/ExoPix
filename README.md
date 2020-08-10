@@ -25,7 +25,7 @@ Run in a virtual environment using pipenv. This will ensure that your dependency
 ```bash
 pip3 install pipenv
 git clone https://github.com/jeaadams/JWST-ERS-Pipeline.git
-cd Jwst_ERS_Pipeline
+cd JWST_ERS_Pipeline
 python3 -m pipenv shell
 ```
 
@@ -34,6 +34,6 @@ Alternatively, if you're on MacOS, you can install pipenv using Homebrew:
 ```bash
 brew install pipenv
 git clone https://github.com/jeaadams/JWST-ERS-Pipeline.git
-cd Jwst_ERS_Pipeline
+cd JWST_ERS_Pipeline
 pipenv shell
 ```
