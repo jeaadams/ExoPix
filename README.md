@@ -37,3 +37,20 @@ git clone https://github.com/jeaadams/JWST-ERS-Pipeline.git
 cd JWST_ERS_Pipeline
 pipenv shell
 ```
+
+Then, you can install all the necessary packages with the following:
+
+```bash
+pipenv install
+```
+
+
+## Tutorials
+
+Once you've cloned our repository and set up all the necessary packages, you can open and run our tutorials!
+
+
+```bash
+cd tutorials
+jupyter notebook
+```
