@@ -24,19 +24,16 @@ Run in a virtual environment using pipenv. This will ensure that your dependency
 
 ```bash
 pip3 install pipenv
-```
-
-```bash
 git clone https://github.com/jeaadams/JWST-ERS-Pipeline.git
-cd Jwst_Ers_Pipeline
+cd Jwst_ERS_Pipeline
 python3 -m pipenv shell
 ```
 
-### OR 
-
-Run in a Docker container: 
+Alternatively, if you're on MacOS, you can install pipenv using Homebrew: 
 
 ```bash
-docker build -t jwst_ers_pipeline .
-docker run -v $(pwd):/home/jovyan -p 8888:8888 jwst_ers_pipeline
+brew install pipenv
+git clone https://github.com/jeaadams/JWST-ERS-Pipeline.git
+cd Jwst_ERS_Pipeline
+pipenv shell
 ```
