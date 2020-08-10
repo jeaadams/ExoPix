@@ -19,13 +19,17 @@ pip install -rf requirements.txt
 
 ### OR 
 
-Run in a virtual environment using pipenv. This will ensure that your dependency graph is compatible:
+Run in a virtual environment using pipenv. This will ensure that your dependency graph is compatible.
+
 
 ```bash
-pip install pipenv
-git clone git@github.com:jeaadams/JWST-ERS-Pipeline.git
-cd jwst_ers_pipeline
-pipenv run jupyter notebook
+pip3 install pipenv
+```
+
+```bash
+git clone https://github.com/jeaadams/JWST-ERS-Pipeline.git
+cd Jwst_Ers_Pipeline
+python3 -m pipenv shell
 ```
 
 ### OR 
