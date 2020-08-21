@@ -39,13 +39,6 @@ cd ExoPix
 pipenv shell
 ```
 
-Then, you can install all the necessary packages with the following:
-
-```bash
-pipenv install -r requirements.txt
-```
-
-
 ## Tutorials
 
 Once you've cloned our repository and set up all the necessary packages, you can open and run our tutorials in Jupyter!
