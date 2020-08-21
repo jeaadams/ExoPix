@@ -14,7 +14,7 @@ The functions utilized in this notebook require Python version 3.8.5 or above.
 Upon cloning our repository, you'll need to install the packages in our requirements.txt. You can do this by running the following:
 
 ```bash
-pip install -rf requirements.txt
+pip install -r requirements.txt
 ```
 Now, all the necessary packages should be installed!
 
@@ -42,7 +42,7 @@ pipenv shell
 Then, you can install all the necessary packages with the following:
 
 ```bash
-pipenv install -rf requirements.txt
+pipenv install -r requirements.txt
 ```
 
 
