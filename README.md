@@ -4,7 +4,7 @@
 [![Powered by pyKLIP](https://img.shields.io/badge/powered_by-pyKLIP-EB5368.svg?style=flat)](https://bitbucket.org/pyKLIP/pyklip/src/master/)
 
 
-The tutorials contained in ExoPix are aimed at providng an understanding of simulated data from the James Webb Space Telescope. These notebooks can be used to estimate JWST's performance imaging exoplanets.
+The tutorials contained in ExoPix are aimed at providng an understanding of simulated data from the James Webb Space Telescope. These notebooks can be used to estimate JWST's performance imaging exoplanets. For more detailed instructions, check our documentation page [here](https://exopix.readthedocs.io/en/latest/).
 
 
 ## Installation
