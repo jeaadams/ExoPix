@@ -9,7 +9,7 @@ The tutorials contained in ExoPix are aimed at providng an understanding of simu
 
 ## Installation
 
-The functions utilized in this notebook require Python version 3.8.5 or above.
+The functions utilized in these notebooks require Python version 3.8.5 or above.
 
 Upon cloning our repository, you'll need to install the packages in our requirements.txt. You can do this by running the following:
 
