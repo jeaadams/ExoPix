@@ -1,3 +1,6 @@
+<p align="center"><img src="docs/exopix_logo_1.png" alt="orbitize!" width="180"/></p>
+
+
 # ExoPix
 
 [![Powered by AstroPy](https://img.shields.io/badge/powered_by-AstroPy-EB5368.svg?style=flat)](http://www.astropy.org)
