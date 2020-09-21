@@ -9,7 +9,7 @@
    contain the root `toctree` directive.
 
 
-.. image:: exopix_logo_1.png
+.. image:: ./exopix_logo_1.png
    :width: 270px
    :height: 180px
    :align: center
