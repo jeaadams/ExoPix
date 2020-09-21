@@ -1,12 +1,24 @@
+
+.. |br| raw:: html
+
+   <br />
+
 .. ExoPix documentation master file, created by
    sphinx-quickstart on Mon Aug  3 01:13:48 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+
+.. image:: exopix_logo_1.png
+   :width: 270px
+   :height: 180px
+   :align: center
+
+
 ExoPix
 =========
 
-ExoPix is a collection of tutorials aimed at illustrating the imaging of exoplanets with the James Webb Space Telescope (JWST). 
+Welcome! ExoPix is a collection of tutorials aimed at illustrating the imaging of exoplanets with the James Webb Space Telescope (JWST). 
 Our tutorials are meant to demonstrate the application of the PSF-subtraction algorithm pyKLIP to simulated JWST data. 
 We provide simple walkthroughs of pyKLIP's ability to reveal exoplanets and measure their properties in imaged extrasolar systems.
 
